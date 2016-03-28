@@ -1,6 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
@@ -29,18 +27,7 @@
 								<li class="active"><a href="<c:url value="/"/>">Home</a></li>
 								<li><a href="#">Features</a></li>
 								<li><a href="#">Contact</a></li>
-								<sec:authorize ifAnyGranted="ROLE_ANONYMOUS">
-									<li><a href="j_spring_security_login">Log In</a></li>
-								</sec:authorize>
-								<sec:authorize ifNotGranted="ROLE_ANONYMOUS">
-									<li class="dropdown"><a href="#" data-toggle="dropdown"
-										aria-expanded="false"> Welcome <sec:authentication
-												property="name" /> <span class="caret"></span>
-									</a>
-										<ul class="dropdown-menu">
-											<li><a href='j_spring_security_logout'>Logout</a></li>
-										</ul></li>
-								</sec:authorize>
+								<li><a href="<c:url value="/login"/>">Log In</a></li>
 							</ul>
 						</nav>
 					</div>

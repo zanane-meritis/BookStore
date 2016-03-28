@@ -1,18 +1,11 @@
 package fr.meritis.bookstore.model;
 
-import javax.persistence.*;
 
-@Entity
-@Table
 public class Book {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@Column(nullable=false, length=255)
 	private String title;
 	
-	@Column(nullable=false, length=255)
 	private String author;
 
 	public int getId() {

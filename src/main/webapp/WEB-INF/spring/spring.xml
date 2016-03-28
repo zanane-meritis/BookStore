@@ -12,10 +12,10 @@
     <mvc:annotation-driven/>
     <context:component-scan base-package="fr.meritis.bookstore"/>
  
-    <mvc:resources mapping="/assets/**" location="/resources/"/>
+    <mvc:resources mapping="/ressources/**" location="/resources/"/>
  
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/pages/"
-          p:suffix=".jsp"/>
+          p:suffix=".html"/>
 	
 </beans>
