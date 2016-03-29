@@ -14,7 +14,7 @@
 	<script src="resources/js/services.js"></script>
 </head>
 <!--https://www.toptal.com/angular-js/a-step-by-step-guide-to-your-first-angularjs-app-->
-<body>
+<body ng-controller='indexController'>
 	<div class="site-wrapper">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
@@ -22,11 +22,11 @@
 					<div class="inner">
 						<h3 class="masthead-brand">BookStore</h3>
 						<nav>
-							<ul class="nav masthead-nav">
-								<li class="active"><a href="#/">Home</a></li>
-								<li><a href="#/features">Features</a></li>
-								<li><a href="#/contact">Contact</a></li>
-								<li><a href="#/login">Log In</a></li>
+							<ul class="nav masthead-nav" >
+								<li ng-class="{active:isActive('/')}"><a href="#/">Home</a></li>
+								<li ng-class="{active:isActive('/features')}"><a href="#/features">Features</a></li>
+								<li ng-class="{active:isActive('/contact')}"><a href="#/contact">Contact</a></li>
+								<li ng-class="{active:isActive('/login')}"><a href="#/login">Log In</a></li>
 							</ul>
 						</nav>
 					</div>

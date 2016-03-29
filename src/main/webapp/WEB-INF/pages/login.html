@@ -1,12 +1,12 @@
-<form class="form-signin"	method="post">
+<form class="form-signin" action="j_spring_security_check" method="post">
 	<h2 class="form-signin-heading">Please sign in</h2>
 		<!-- <div class="alert alert-danger" role="alert">
 			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 			<span class="sr-only">Error:</span> Your login was unsuccessful. </br>
 			Caused: ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message }
 		</div> -->
-	<input name="j_username" class="form-control" type="email" placeholder="Email address" /> 
-	<input name="j_password" class="form-control" type="password" placeholder="Password" />
+	<input name="username" class="form-control" type="email" placeholder="Email address" /> 
+	<input name="password" class="form-control" type="password" placeholder="Password" />
 	<div class="checkbox">
 		<label> <input type="checkbox" value="remember-me">
 			Remember me

@@ -1,14 +1,18 @@
 var App = angular.module('bookstoreApp',['bookstoreApp.controllers','bookstoreApp.services','ngRoute']);
-App.config(['$routeProvider', function($routeProvider) {
+App.config(function($routeProvider,$httpProvider) {
 	$routeProvider
 		.when('/login', {
-			templateUrl:'login.html'
-			
+			templateUrl:'login.html',
+		})
+		.when('/features', {
+			templateUrl:'features.html',
+		})
+		.when('/contact', {
+			templateUrl:'contact.html',
 		})
 		.when('/admin', {
 			templateUrl:'admin.html'
 		})
-		.otherwise({
-			redirectTo:'/'
-		});
-}]);
+		.otherwise('/');
+	$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+});
