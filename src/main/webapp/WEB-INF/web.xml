@@ -6,9 +6,19 @@
 
 	<display-name>Meritis Book Store</display-name>
 
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/spring.xml</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
 	<servlet>
 		<servlet-name>bookstore</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring/spring.xml</param-value>
@@ -17,20 +27,18 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>bookstore</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
-
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
 	
-	 <!-- Loads Spring Security config file -->
+	
+	
+	 <!-- Loads Spring Security config file 
 	<context-param>
-		<param-name>contextConfigLocation</param-name>
+		<param-name>contextSecurityConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/spring-security.xml</param-value>
-	</context-param>
+	</context-param>-->
 
-	<!-- Spring Security -->
+	<!-- Spring Security 
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -38,7 +46,7 @@
 	
 	<filter-mapping>
 		<filter-name>springSecurityFilterChain</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>-->
 
 </web-app>
