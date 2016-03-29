@@ -1,1 +1,1 @@
-var bookstoreService=angular.module('bookstoreApp.services'[]);
+var bookstoreService=angular.module('bookstoreApp.services',[]);
