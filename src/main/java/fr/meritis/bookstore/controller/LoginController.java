@@ -14,7 +14,6 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login", method=RequestMethod.GET)
 	public String login(ModelMap model) {
-		//model.addAttribute("account", new Account());
 		return "login";
 	}
 	
@@ -25,19 +24,18 @@ public class LoginController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/logout", method=RequestMethod.GET)
+	/*@RequestMapping(value = "/logout", method=RequestMethod.GET)
 	public String logout(ModelMap model) {
 		return "/";
-	}
+	}*/
 	
 	@RequestMapping(value = "/403", method=RequestMethod.GET)
 	public String error403(ModelMap model) {
 		return "403";
 	}
 	
-	@RequestMapping(value="/login", method = RequestMethod.POST)
+	/*@RequestMapping(value="/login", method = RequestMethod.POST)
 	public String welcomePageConnected(ModelMap model) {	
-		model.addAttribute("name", "aaa");
 		return "redirect:";
-	}
+	}*/
 }

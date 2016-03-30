@@ -15,17 +15,18 @@
 	    <intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
 	   	<form-login login-page="/login" authentication-failure-url="/loginFailed" authentication-success-handler-ref="authSuccessHandler"
 	   		authentication-failure-handler-ref="authFailureHandler" />
-	    <logout logout-success-url="/logout" /> 
+	    <logout logout-url="/logout" success-handler-ref="logoutSuccessHandler"/> 
     	<csrf disabled="true"/>
     </http>
     
+    <beans:bean id="logoutSuccessHandler" class="fr.meritis.bookstore.configuration.LogoutSuccess"/>
     <beans:bean id="authSuccessHandler" class="fr.meritis.bookstore.configuration.AuthSuccess"/>
     <beans:bean id="authFailureHandler" class="fr.meritis.bookstore.configuration.AuthFailure"/>
     
     <authentication-manager >
         <authentication-provider>
             <user-service>
-                <user name="bill"  password="abc123"  authorities="ROLE_USER" />
+                <user name="bill"  password="bill"  authorities="ROLE_USER" />
                 <user name="admin" password="root123" authorities="ROLE_ADMIN" />
                 <user name="dba"   password="root123" authorities="ROLE_ADMIN,ROLE_DBA" />
             </user-service>

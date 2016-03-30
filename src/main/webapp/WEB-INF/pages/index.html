@@ -9,10 +9,11 @@
 	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
 	<script src="resources/angular/angular.min.js"></script>
 	<script src="resources/angular/angular-route.min.js"></script>
-	<script src="resources/js/app.js"></script>
+	<script src="resources/js/services/LoginService.js"></script>
 	<script src="resources/js/controllers/IndexController.js"></script>
 	<script src="resources/js/controllers/LoginController.js"></script>
-	<script src="resources/js/services/services.js"></script>
+	<script src="resources/js/app.js"></script>
+
 </head>
 
 <!--https://www.toptal.com/angular-js/a-step-by-step-guide-to-your-first-angularjs-app-->
@@ -28,7 +29,7 @@
 								<li ng-class="{active:isActive('/')}"><a href="#/">Home</a></li>
 								<li ng-class="{active:isActive('/features')}"><a href="#/features">Features</a></li>
 								<li ng-class="{active:isActive('/contact')}"><a href="#/contact">Contact</a></li>
-								<li ng-hide="!authenticated()"><a href="" ng-click="logout()">Log out</a></li>
+								<li ng-show="authenticated()"><a href="" ng-click="logout()">Log out</a></li>
 							</ul>
 						</nav>
 					</div>

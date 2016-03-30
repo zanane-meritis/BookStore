@@ -1,10 +1,8 @@
-var app = angular.module('bookstoreApp');
-//var auth = app.factory('auth');
-app.controller('LoginController',['$scope', '$routeParams', '$http','$location', 'auth',function($scope, $routeParams, $http, $location,auth){
+angular.module('LoginController',['LoginService']).controller('LoginController',function($scope, $routeParams, $http, $location,LoginService){
 
 	$scope.credentials = {};
 	$scope.login = function(){
-		auth.authenticate($scope.credentials,function(authenticated) {
+		LoginService.authenticate($scope.credentials,function(authenticated) {
 			if (authenticated) {
 				console.log("Login succeeded")
 				$scope.error = false;
@@ -14,4 +12,6 @@ app.controller('LoginController',['$scope', '$routeParams', '$http','$location',
 			}
 		})
 	};
-}]);
+});
+
+//['$scope', '$routeParams', '$http','$location', 'LoginService'

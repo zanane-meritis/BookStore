@@ -1,4 +1,4 @@
-var app = angular.module('bookstoreApp',['ngRoute']);
+var app = angular.module('bookstoreApp',['ngRoute','IndexController','LoginController','LoginService']);
 app.config(function($routeProvider,$httpProvider) {
 	$routeProvider
 		.when('/login', {
@@ -15,4 +15,6 @@ app.config(function($routeProvider,$httpProvider) {
 		})
 		.otherwise('/');
 	$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+}).run(function(LoginService){
+	LoginService.init('/', '/login', '/logout');
 });
