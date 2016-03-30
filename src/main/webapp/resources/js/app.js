@@ -1,5 +1,5 @@
-var App = angular.module('bookstoreApp',['bookstoreApp.controllers','bookstoreApp.services','ngRoute']);
-App.config(function($routeProvider,$httpProvider) {
+var app = angular.module('bookstoreApp',['ngRoute']);
+app.config(function($routeProvider,$httpProvider) {
 	$routeProvider
 		.when('/login', {
 			templateUrl:'login.html',
