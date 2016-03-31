@@ -24,10 +24,10 @@ public class LoginController {
 		return "login";
 	}
 	
-	/*@RequestMapping(value = "/logout", method=RequestMethod.GET)
+	@RequestMapping(value = "/logout", method=RequestMethod.GET)
 	public String logout(ModelMap model) {
-		return "/";
-	}*/
+		return "logout";
+	}
 	
 	@RequestMapping(value = "/403", method=RequestMethod.GET)
 	public String error403(ModelMap model) {

@@ -16,5 +16,5 @@ app.config(function($routeProvider,$httpProvider) {
 		.otherwise('/');
 	$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 }).run(function(LoginService){
-	LoginService.init('/', '/login', '/logout');
+	LoginService.init('/', 'login', 'logout');
 });

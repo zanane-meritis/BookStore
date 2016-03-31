@@ -15,10 +15,10 @@
 	    <intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
 	   	<form-login login-page="/login" authentication-failure-url="/loginFailed" authentication-success-handler-ref="authSuccessHandler"
 	   		authentication-failure-handler-ref="authFailureHandler" />
-	    <logout logout-url="/logout" success-handler-ref="logoutSuccessHandler"/> 
+	     <logout logout-url="/logout" success-handler-ref="logoutSuccessHandler" delete-cookies="JSESSIONID"/> 
     	<csrf disabled="true"/>
     </http>
-    
+    <!-- http://stackoverflow.com/questions/15946132/springsecurity-fail-to-delete-jsessionid -->
     <beans:bean id="logoutSuccessHandler" class="fr.meritis.bookstore.configuration.LogoutSuccess"/>
     <beans:bean id="authSuccessHandler" class="fr.meritis.bookstore.configuration.AuthSuccess"/>
     <beans:bean id="authFailureHandler" class="fr.meritis.bookstore.configuration.AuthFailure"/>

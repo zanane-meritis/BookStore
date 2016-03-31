@@ -3,15 +3,15 @@ angular.module('LoginService',[])
 	var LoginService = {
 		authenticated : false,
 
-		loginPath : '/login',
-		logoutPath : '/logout',
+		loginPath : 'login',
+		logoutPath : 'logout',
 		homePath : '/',
 
 		authenticate : function(credentials, callback) {
 
 			var data = "username="+credentials.username+"&password="+credentials.password+"&submit=Login";
 
-			$http.post('login', data, {
+			$http.post(LoginService.loginPath, data, {
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded',
 				}
@@ -40,8 +40,9 @@ angular.module('LoginService',[])
 
 		clear : function() { 
 			LoginService.authenticated = false;
-			$location.path(LoginService.loginPath);
+			
 			$http.get(LoginService.logoutPath, {});
+			$location.path(LoginService.loginPath);
 		}
 	};
 	return LoginService;
