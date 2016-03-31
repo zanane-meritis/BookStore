@@ -1,4 +1,4 @@
-angular.module('LoginController',['LoginService']).controller('LoginController',function($scope, $routeParams, $http, $location,LoginService){
+angular.module('LoginController',['LoginService']).controller('LoginController',function($scope, $routeParams, $http, $location, LoginService){
 
 	$scope.credentials = {};
 	$scope.login = function(){
@@ -9,9 +9,8 @@ angular.module('LoginController',['LoginService']).controller('LoginController',
 			} else {
 				console.log("Login failed")
 				$scope.error = true;
+				LoginService.clear();
 			}
 		})
 	};
 });
-
-//['$scope', '$routeParams', '$http','$location', 'LoginService'
