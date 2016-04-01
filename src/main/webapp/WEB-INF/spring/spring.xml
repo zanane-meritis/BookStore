@@ -11,11 +11,14 @@
  
  	<mvc:default-servlet-handler/>
     <mvc:annotation-driven/>
-    <context:component-scan base-package="fr.meritis.bookstore.controller"/>
-    <context:component-scan base-package="fr.meritis.bookstore.model"/>
-    <context:component-scan base-package="fr.meritis.bookstore.repository"/>
-    <context:component-scan base-package="fr.meritis.bookstore.service"/>
- 	<!-- <context:component-scan base-package="fr.meritis.bookstore.configuration"/> -->
+    
+    <context:component-scan base-package="fr.meritis.secondtrade"/>
+    <!-- 
+    <context:component-scan base-package="fr.meritis.secondtrade.model"/>
+    <context:component-scan base-package="fr.meritis.secondtrade.repository"/>
+    <context:component-scan base-package="fr.meritis.secondtrade.service"/>
+ 	<context:component-scan base-package="fr.meritis.secondtrade.configuration"/> -->
+ 	
  	<import resource="spring-security.xml"/>
     <mvc:resources mapping="/resources/**" location="/resources/"/>
  

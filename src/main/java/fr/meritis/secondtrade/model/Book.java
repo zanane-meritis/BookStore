@@ -1,4 +1,4 @@
-package fr.meritis.bookstore.model;
+package fr.meritis.secondtrade.model;
 
 
 public class Book {

@@ -1,4 +1,4 @@
-package fr.meritis.bookstore.controller;
+package fr.meritis.secondtrade.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

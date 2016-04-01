@@ -1,7 +1,6 @@
-package fr.meritis.bookstore.controller;
+package fr.meritis.secondtrade.controller;
 
 
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 	
-	private static final Logger LOGGER = Logger.getLogger(LoginController.class);
+	//private static final Logger LOGGER = Logger.getLogger(LoginController.class);
 	
 	@RequestMapping(value = "/login", method=RequestMethod.GET)
 	public String login(ModelMap model) {
@@ -19,8 +18,6 @@ public class LoginController {
 	
 	@RequestMapping(value = "/loginFailed", method=RequestMethod.GET)
 	public String loginFailed(ModelMap model) {
-		System.out.println("login failed");
-		model.addAttribute("error", true);
 		return "login";
 	}
 	
@@ -34,8 +31,8 @@ public class LoginController {
 		return "403";
 	}
 	
-	/*@RequestMapping(value="/login", method = RequestMethod.POST)
+	@RequestMapping(value="/login", method = RequestMethod.POST)
 	public String welcomePageConnected(ModelMap model) {	
-		return "redirect:";
-	}*/
+		return "forward:";
+	}
 }

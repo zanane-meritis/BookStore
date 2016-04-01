@@ -9,7 +9,6 @@ angular.module('LoginController',['LoginService']).controller('LoginController',
 			} else {
 				console.log("Login failed")
 				$scope.error = true;
-				LoginService.clear();
 			}
 		})
 	};
