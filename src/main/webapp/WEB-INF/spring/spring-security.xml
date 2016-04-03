@@ -12,7 +12,7 @@
 	   	<intercept-url pattern="/loginFailed" access="permitAll"  />
 	    <intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
 	   	<form-login login-page="/login" authentication-failure-url="/loginFailed" authentication-success-handler-ref="authSuccessHandler"
-	   		authentication-failure-handler-ref="authFailureHandler" default-target-url="/"/>
+	   		authentication-failure-handler-ref="authFailureHandler"/>
 		 <logout logout-url="/logout" success-handler-ref="logoutSuccessHandler"/>
     	<csrf disabled="true" />
     </http>
